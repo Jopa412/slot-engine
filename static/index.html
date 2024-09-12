@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-navbutton-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Rich Panda</title>
+    <link rel="stylesheet" href="./app.css" />
+    <script src="./scripts/platform.js"></script>
+    <script src="./scripts/scream.min.js"></script>
+    <script src="./scripts/brim.min.js"></script>
+  </head>
+
+  <body onload="maximazeWindow();">
+    <p style="font-family: oswaldregular; font-size: 0px; visibility: hidden">.</p>
+    <div id="brim-mask">
+      <div class="swipeup">
+        <span id="swipeup"></span>
+        <img class="swipe_img" src="./assets/swipe_up.png" alt="Swipe Up" width="200" height="350" />
+      </div>
+    </div>
+    <div id="brim-main"></div>
+    <div id="errorbar"></div>
+    <script>
+      function inIframe() {
+        try {
+          return window.self !== window.top;
+        } catch (e) {
+          return true;
+        }
+      }
+
+      (function () {
+        if (
+          !inIframe() &&
+          platform.product == 'iPhone' &&
+          parseInt(platform.os.version, 10) > 8 &&
+          window.navigator.standalone != true
+        ) {
+          document.querySelector('body').classList.add('is-ios');
+
+          setTimeout(function () {
+            scream = gajus.Scream();
+
+            brim = gajus.Brim({
+              viewport: scream,
+            });
+
+            brim.on('viewchange', function (e) {
+              if (e.viewName === 'minimal') {
+                document.querySelector('body').classList.add('is-fullscreen');
+              } else {
+                document.querySelector('body').classList.remove('is-fullscreen');
+              }
+            });
+          }, 100);
+        }
+      })();
+
+      function maximazeWindow() {
+        window.moveTo(0, 0);
+        window.resizeTo(screen.availWidth, screen.availHeight);
+      }
+    </script>
+  </body>
+</html>

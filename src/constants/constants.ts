@@ -1,0 +1,29 @@
+export const STAKE_PER_LINE = 25;
+export const SELECTED_LINES = 20;
+export const TOTAL_STAKE = 100;
+export const COLUMNS = 3;
+export const ROWS = 3;
+export const SYMBOL_WILD = 0;
+
+export const LINES = [
+  [1, 1, 1, 1, 1],
+  [0, 0, 0, 0, 0],
+  [2, 2, 2, 2, 2],
+  [0, 1, 2, 1, 0],
+  [2, 1, 0, 1, 2],
+  [1, 0, 0, 0, 1],
+  [1, 2, 2, 2, 1],
+  [0, 0, 1, 2, 2],
+  [2, 2, 1, 0, 0],
+  [1, 2, 1, 0, 1],
+  [1, 0, 1, 2, 1],
+  [0, 1, 1, 1, 0],
+  [2, 1, 1, 1, 2],
+  [0, 1, 0, 1, 0],
+  [2, 1, 2, 1, 2],
+  [1, 1, 0, 1, 1],
+  [1, 1, 2, 1, 1],
+  [0, 0, 2, 0, 0],
+  [2, 2, 0, 2, 2],
+  [0, 2, 2, 2, 0],
+];

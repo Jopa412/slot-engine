@@ -1,6 +1,6 @@
 # Slot Engine
 
-## Demo 
+## Demo (wait few seconds to load)
 ![example](./static/demo.gif)
 
 ## Installation instuctions

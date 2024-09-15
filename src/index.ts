@@ -12,6 +12,5 @@ declare global {
 
 (() => {
   const app = new App();
-
   app.init();
 })();

@@ -10,7 +10,9 @@
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "dev": "webpack serve --mode development",
     "prod": "webpack --config webpack.config.js --mode production",
-    "test": "jest"
+    "test": "jest",
+    "electron": "electron ./electron-main.js",
+    "electron-dev": "concurrently \"npm:dev\" \"npm:electron\""
   },
   "devDependencies": {
     "@types/lodash": "^4.17.0",
@@ -18,9 +20,11 @@
     "@typescript-eslint/parser": "^7.3.1",
     "@webpack-cli/serve": "^2.0.5",
     "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^9.0.1",
     "copy-webpack-plugin": "^12.0.2",
     "cypress": "^13.7.1",
     "dotenv-webpack": "^8.1.0",
+    "electron": "^32.1.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
